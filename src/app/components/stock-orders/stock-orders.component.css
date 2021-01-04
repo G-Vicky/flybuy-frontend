@@ -1,0 +1,37 @@
+.p-header {
+  color: #3445b4;
+}
+
+.btn {
+  border-radius: 5px;
+  padding: 9px 18px;
+  /* font-size: px; */
+  text-decoration: none;
+  margin: 9px;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+}
+
+.btn:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
+
+.blue {
+  background-color: #55acee;
+  box-shadow: 0px 5px 0px 0px #3c93d5;
+}
+
+.blue:hover {
+  background-color: #6fc6ff;
+}
+.green {
+  background-color: #2ecc71;
+  box-shadow: 0px 5px 0px 0px #15b358;
+}
+
+.green:hover {
+  background-color: #48e68b;
+}

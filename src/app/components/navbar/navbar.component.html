@@ -1,0 +1,60 @@
+<div class="wrapper d-flex align-items-stretch">
+  <nav id="sidebar" [class.active]="isActive != true">
+    <div class="custom-menu">
+      <button
+        type="button"
+        id="sidebarCollapse"
+        (click)="toggleMenu()"
+        class="btn btn-primary"
+      >
+        <i class="fa fa-bars"></i>
+        <span class="sr-only">Toggle Menu</span>
+      </button>
+    </div>
+    <div class="p-4">
+      <h1>
+        <a href="index.html" class="logo">FlyBuy<span>Hub</span></a>
+      </h1>
+      <ul class="list-unstyled components mb-5">
+        <li routerLinkActive="active">
+          <a routerLink="home"><span class="fa fa-home mr-3"></span> Home</a>
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink="inventory"
+            ><span class="fa fa-cubes mr-3"></span> Inventory</a
+          >
+        </li>
+
+        <li routerLinkActive="active">
+          <a routerLink="stock-orders"
+            ><span class="fa fa-tasks mr-3"></span> Stock Orders</a
+          >
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink="vendors"
+            ><span class="fa fa-users mr-3"></span> Vendors</a
+          >
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink="notifications"
+            ><span class="fa fa-bell mr-3"></span> Notifications</a
+          >
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink="report"
+            ><span class="fa fa-list mr-3"></span> Report</a
+          >
+        </li>
+
+        <li routerLinkActive="active">
+          <a routerLink="admin"><span class="fa fa-cogs mr-3"></span> Admin</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Content  -->
+  <div id="content" class="p-4 p-md-5 pt-5">
+    <router-outlet></router-outlet>
+  </div>
+</div>
