@@ -1,0 +1,69 @@
+<div class="p-header">
+  <h1 class="text-center">New Supplier</h1>
+</div>
+
+<div class="container">
+  <div class="form">
+    <form [formGroup]="supplierForm">
+      <mat-form-field>
+        <input matInput placeholder="company name" formControlName="company" />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="contact name"
+          formControlName="contactName"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="phone no" formControlName="phone" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Select Country</mat-label>
+        <mat-select formControlName="country">
+          <mat-option value="India">India</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div formArrayName="products">
+        <div
+          *ngFor="let product of productForms.controls; let i = index"
+          [formGroupName]="i"
+        >
+          <mat-form-field>
+            <input
+              matInput
+              placeholder="product name"
+              formControlName="productName"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              placeholder="product price"
+              formControlName="productPrice"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              placeholder="product description"
+              formControlName="productDescription"
+            />
+          </mat-form-field>
+          <button mat-raised-button color="warn" (click)="deleteProduct(i)">
+            Delete
+          </button>
+        </div>
+      </div>
+
+      <button mat-raised-button color="primary" (click)="addProduct()">
+        Add product
+      </button>
+    </form>
+  </div>
+  <div>
+    <a class="btn green" (click)="createNewSupplier()">Create Supplier</a>
+  </div>
+</div>

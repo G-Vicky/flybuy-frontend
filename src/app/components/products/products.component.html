@@ -1,13 +1,24 @@
 <div class="container">
-  <div class="input-group mb-3">
-    <select id="inputCategory" class="form-control" style="max-width: 15%">
+  <div class="">
+    <!-- <select id="inputCategory" class="form-control" style="max-width: 15%">
       <option selected>filter...</option>
       <option>...</option>
-    </select>
-    <input type="text" class="form-control" />
-    <div class="input-group-append">
-      <button class="btn btn-primary"><i class="fa fa-search"></i></button>
-    </div>
+    </select> -->
+    <form [formGroup]="searchProductForm">
+      <input
+        type="text"
+        class="form-control"
+        formControlName="searchProduct"
+        placeholder="Search product"
+        style="width: 100%"
+        (change)="getSearchProduct()"
+      />
+    </form>
+    <!-- <div class="input-group-append">
+      <button class="btn btn-primary" (click)="getSearchProduct()">
+        <i class="fa fa-search"></i>
+      </button>
+    </div> -->
   </div>
   <table class="table table-hover">
     <thead>
@@ -16,7 +27,7 @@
         <th scope="col">Name</th>
         <th scope="col">Price</th>
         <th scope="col">Available Quantity</th>
-        <th scope="col">Created At</th>
+        <!-- <th scope="col">Created At</th> -->
       </tr>
     </thead>
     <tbody>
@@ -25,7 +36,7 @@
         <td>{{ product.productName }}</td>
         <td>₹ {{ product.productPrice }}</td>
         <td>{{ product.inventoryQuantity }}</td>
-        <td>{{ product.dateCreated }}</td>
+        <!-- <td>{{ product.dateCreated }}</td> -->
       </tr>
     </tbody>
   </table>

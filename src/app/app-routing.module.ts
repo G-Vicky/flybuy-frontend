@@ -4,6 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { InventoryComponent } from './components/inventory/inventory.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { StockOrdersComponent } from './components/stock-orders/stock-orders.component';
+import { SuppliersComponent } from './components/suppliers/suppliers.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'inventory',
     component: InventoryComponent,
+  },
+  {
+    path: 'suppliers',
+    component: SuppliersComponent,
   },
   {
     path: 'stock-orders',

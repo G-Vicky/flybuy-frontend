@@ -3,6 +3,75 @@
 </div>
 
 <div class="container">
+  <div class="">
+    <form [formGroup]="searchProductForm">
+      <input
+        type="text"
+        class="form-control"
+        formControlName="searchProduct"
+        placeholder="Search products"
+        style="width: 100%"
+        (change)="getSearchProduct()"
+        list="productList"
+      />
+      <datalist id="productList">
+        <option *ngFor="let product of selectProduct">
+          {{ product.productName }}
+        </option>
+      </datalist>
+      <!--
+        [matAutocomplete]="auto" <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let product of selectProduct" [value]="product">
+          {{ product }}
+        </mat-option>
+      </mat-autocomplete> -->
+    </form>
+  </div>
+  <br />
+
+  <div>
+    <form [formGroup]="productStockForm">
+      <div formArrayName="products">
+        <div
+          *ngFor="let product of productForms.controls; let i = index"
+          [formGroupName]="i"
+        >
+          <mat-form-field>
+            <input
+              matInput
+              placeholder="product name"
+              formControlName="productName"
+            />
+          </mat-form-field>
+          <mat-form-field hidden>
+            <input
+              matInput
+              placeholder="product price"
+              formControlName="productPrice"
+            />
+          </mat-form-field>
+          <mat-form-field hidden>
+            <input
+              matInput
+              placeholder="product description"
+              formControlName="productDescription"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="quantity" formControlName="quantity" />
+          </mat-form-field>
+          <button mat-raised-button color="warn" (click)="deleteProduct(i)">
+            Delete
+          </button>
+        </div>
+      </div>
+
+      <button mat-raised-button color="primary" hidden (click)="addProduct()">
+        Add product
+      </button>
+    </form>
+  </div>
+
   <div>
     <a class="btn green">Place new order</a>
   </div>

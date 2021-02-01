@@ -3,8 +3,6 @@ export interface IProduct {
   productName: string;
   productPrice: number;
   productDescription: string;
-  categoty: string[];
-  Brand: string;
   inventoryQuantity: number;
   dateCreated: number;
 }
