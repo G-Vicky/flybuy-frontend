@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { InventoryComponent } from './components/inventory/inventory.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { ReportComponent } from './components/report/report.component';
 import { StockOrdersComponent } from './components/stock-orders/stock-orders.component';
 import { SuppliersComponent } from './components/suppliers/suppliers.component';
 
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'stock-orders',
     component: StockOrdersComponent,
+  },
+  {
+    path: 'report',
+    component: ReportComponent
   },
   {
     path: '**',

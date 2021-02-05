@@ -1,0 +1,16 @@
+<div>
+  <mat-form-field>
+    <mat-label>Select year</mat-label>
+    <mat-select
+      (selectionChange)="createMonthlyChart()"
+      [(value)]="selectedYear"
+    >
+      <mat-option *ngFor="let year of yearOptions" [value]="year">
+        {{ year }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div>
+    <canvas id="monthlyChart"></canvas>
+  </div>
+</div>

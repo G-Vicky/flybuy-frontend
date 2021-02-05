@@ -1,0 +1,56 @@
+<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+  <li [ngbNavItem]="1">
+    <a ngbNavLink><b>Stats</b></a>
+    <ng-template ngbNavContent>
+      <div>
+        <h1 class="text-center">{{ selectedYear }} {{ selectedMonth }}</h1>
+        <div>
+          Total sales till {{ selectedMonth }} {{ selectedYear }} : ₹
+          {{ totalSales }}
+        </div>
+        <div>Total sales in 2021: ₹ {{ curYearSales }}</div>
+        <div>Total sales in February: ₹ {{ curMonthSales }}</div>
+
+        <br />
+        <hr />
+        <br />
+
+        <div>
+          Top selling products in February 2021:
+          <ol>
+            <li>Munch</li>
+            <li>Oreo</li>
+            <li>Dairy milk</li>
+          </ol>
+        </div>
+
+        <br />
+        <hr />
+        <br />
+
+        <div>
+          Top selling products of all time:
+          <ol>
+            <li>Munch</li>
+            <li>Biscuit</li>
+            <li>Colgate</li>
+          </ol>
+        </div>
+      </div>
+    </ng-template>
+  </li>
+  <li [ngbNavItem]="2">
+    <a ngbNavLink><b>Monthly</b> View</a>
+    <ng-template ngbNavContent>
+      <app-monthly-report></app-monthly-report>
+    </ng-template>
+  </li>
+  <li [ngbNavItem]="3">
+    <a ngbNavLink><b>yearly</b> view </a>
+    <ng-template ngbNavContent>
+      <app-yearly-report></app-yearly-report>
+    </ng-template>
+  </li>
+</ul>
+
+<div [ngbNavOutlet]="nav" class="mt-2"></div>

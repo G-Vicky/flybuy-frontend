@@ -24,6 +24,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { ReportComponent } from './components/report/report.component';
+import { MonthlyReportComponent } from './components/monthly-report/monthly-report.component';
+import { YearlyReportComponent } from './components/yearly-report/yearly-report.component';
 
 const formModules = [
   MatInputModule,
@@ -46,6 +49,9 @@ const formModules = [
     HomeComponent,
     StockOrdersComponent,
     SuppliersComponent,
+    ReportComponent,
+    MonthlyReportComponent,
+    YearlyReportComponent,
   ],
   imports: [
     BrowserModule,

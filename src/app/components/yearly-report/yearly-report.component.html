@@ -1,0 +1,24 @@
+<div>
+  <div>
+    <mat-form-field>
+      <mat-label>Select year 1</mat-label>
+      <mat-select (selectionChange)="createYearlyChart()" [(value)]="year1">
+        <mat-option *ngFor="let year of yearOptions" [value]="year">
+          {{ year }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <span style="width: 9px"></span>
+    <mat-form-field>
+      <mat-label>Select year 2</mat-label>
+      <mat-select (selectionChange)="createYearlyChart()" [(value)]="year2">
+        <mat-option *ngFor="let year of yearOptions" [value]="year">
+          {{ year }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <canvas id="yearlyChart"></canvas>
+  </div>
+</div>
