@@ -3,20 +3,46 @@
     <a ngbNavLink><b>Stats</b></a>
     <ng-template ngbNavContent>
       <div>
-        <h1 class="text-center">{{ selectedYear }} {{ selectedMonth }}</h1>
-        <div>
-          Total sales till {{ selectedMonth }} {{ selectedYear }} : ₹
-          {{ totalSales }}
+        <div class="text-center">
+          <mat-form-field>
+            <mat-select (selectionChange)="getStats()" [(value)]="selectedYear">
+              <mat-option *ngFor="let year of yearOptions" [value]="year">
+                {{ year }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-select
+              (selectionChange)="getStats()"
+              [(value)]="selectedMonth"
+            >
+              <mat-option *ngFor="let month of MONTHS" [value]="month">
+                {{ month }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
-        <div>Total sales in 2021: ₹ {{ curYearSales }}</div>
-        <div>Total sales in February: ₹ {{ curMonthSales }}</div>
+        <div>
+          Total sales till {{ MONTHS[this.today.getMonth()] }}
+          {{ today.getFullYear() }} :
+          <b>₹ {{ totalSales | number }}</b>
+        </div>
+        <div>
+          Total sales in {{ selectedYear }}:
+          <b>₹ {{ curYearSales | number }}</b>
+        </div>
+        <div>
+          Total sales in {{ selectedMonth }} {{ selectedYear }}:
+          <b>₹ {{ curMonthSales | number }}</b>
+        </div>
 
         <br />
         <hr />
         <br />
 
         <div>
-          Top selling products in February 2021:
+          Top selling products in {{ selectedMonth }} {{ selectedYear }}:
           <ol>
             <li>Munch</li>
             <li>Oreo</li>
